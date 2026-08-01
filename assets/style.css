@@ -97,13 +97,13 @@ nav a:hover{color:var(--grad-start);}
 
 .month-group{margin-bottom:40px;}
 .month-title{font-family:'IBM Plex Mono';font-size:13px;text-transform:uppercase;letter-spacing:0.1em;color:var(--stone-dark);border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:18px;}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;}
 .card{
   background:var(--card);border:1px solid var(--ink);border-radius:4px;padding:18px;
   display:flex;flex-direction:column;gap:10px;
   overflow:hidden;
 }
-.card-photo{height:140px;margin:-18px -18px 4px -18px;background-size:cover;background-position:center;}
+.card-photo{height:280px;margin:-18px -18px 4px -18px;background-size:cover;background-position:center;}
 .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
 .card-discipline{font-family:'IBM Plex Mono';font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--stone-dark);}
 .card-title{font-family:'Big Shoulders Display';font-weight:700;font-size:21px;text-transform:none;line-height:1.05;}

@@ -42,6 +42,8 @@ nav a:hover{color:var(--grad-start);}
 .btn-primary:hover{opacity:0.9;}
 .btn-ghost{background:transparent;color:var(--ink);}
 .btn-ghost:hover{background:rgba(41,54,77,0.06);}
+.btn-navy{background:var(--ink);color:#fff;border:none;}
+.btn-navy:hover{background:var(--navy-light);}
 .gang-word{height:16px;vertical-align:middle;margin-left:4px;filter:brightness(0) invert(1);}
 
 /* hero */

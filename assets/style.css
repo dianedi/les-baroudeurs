@@ -28,7 +28,7 @@ h1,h2,h3{font-family:'Big Shoulders Display', sans-serif;font-weight:800;text-tr
 /* header */
 header{padding:20px 0;border-bottom:1px solid var(--line);}
 header .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
-.logo-img{height:32px;display:block;}
+.logo-img{height:42px;display:block;}
 nav{display:flex;gap:28px;font-size:14px;font-weight:500;}
 nav a{color:var(--ink);text-decoration:none;}
 nav a:hover{color:var(--grad-start);}

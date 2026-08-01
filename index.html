@@ -121,8 +121,17 @@
   .badge-low{background:rgba(255,145,77,0.15);color:#B5601F;}
   .badge-full{background:rgba(255,49,49,0.1);color:var(--grad-start);}
   .badge-wait{background:rgba(41,54,77,0.06);color:var(--stone-dark);}
+  .badge-soon{background:rgba(255,196,0,0.18);color:#8A6D00;}
+  .card-detail{font-size:12.5px;color:var(--stone-dark);line-height:1.5;}
+  .card-link{font-size:13px;font-weight:600;color:var(--grad-start);text-decoration:none;}
+  .card-link:hover{text-decoration:underline;}
   .see-all{text-align:center;margin:10px 0 60px;}
   .see-all a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--grad-start);padding-bottom:2px;}
+
+  /* past outings */
+  .past{padding:60px 0 64px;border-top:1px solid var(--line);}
+  .card-past{opacity:0.72;}
+  .card-past .card-title{color:var(--stone-dark);}
 
   /* disciplines grid */
   .disciplines{padding:50px 0 64px;border-top:1px solid var(--line);}
@@ -211,31 +220,41 @@
     <div class="chips" id="chips">
       <button class="chip active" data-f="all">Tous</button>
       <button class="chip" data-f="rando">Rando</button>
-      <button class="chip" data-f="trail">Trail</button>
-      <button class="chip" data-f="alpinisme">Alpinisme</button>
-      <button class="chip" data-f="escalade">Escalade</button>
-      <button class="chip" data-f="ski">Ski</button>
-      <button class="chip" data-f="plongee">Plongée</button>
-      <button class="chip" data-f="voile">Voile</button>
       <button class="chip" data-f="kitesurf">Kitesurf</button>
       <button class="chip" data-f="surf">Surf</button>
-      <button class="chip" data-f="velo">Vélo</button>
-      <button class="chip" data-f="canoe">Canoë</button>
       <button class="chip" data-f="raquettes">Raquettes</button>
+      <button class="chip" data-f="ski">Ski</button>
+      <button class="chip" data-f="velo">Vélo</button>
+      <button class="chip" data-f="plongee">Plongée</button>
+      <button class="chip" data-f="alpinisme">Alpinisme</button>
+      <button class="chip" data-f="voile">Voile</button>
+    </div>
+
+    <div class="month-group" data-m="Août 2026">
+      <div class="month-title">Août 2026</div>
+      <div class="cards">
+        <div class="card" data-d="rando">
+          <div class="card-top"><div><div class="card-discipline">Rando</div><div class="card-title">Les 7 Laux (Belledonne)</div></div></div>
+          <div class="card-meta">22–23 août (2 jours) · Boucle depuis Prapoutel · 31 km, D+ 1 700 m</div>
+          <div class="card-detail">Haute montagne au milieu des lacs de Belledonne, col à 2 500 m et refuges. Bivouac au moins le samedi soir.</div>
+          <div class="card-detail">💰 Max 55€ (hors transport) + repas sur place · 🚉 Gare de Grenoble · 📅 Clôture le 7 août</div>
+          <div class="card-bottom"><a href="https://chat.whatsapp.com/EnwrE7oygcyHlLwP6n0ler" target="_blank" rel="noopener" class="card-link">Rejoindre le groupe →</a><span class="badge badge-open">Inscriptions ouvertes</span></div>
+        </div>
+      </div>
     </div>
 
     <div class="month-group" data-m="Septembre 2026">
       <div class="month-title">Septembre 2026</div>
       <div class="cards">
-        <div class="card" data-d="trail">
-          <div class="card-top"><div><div class="card-discipline">Trail</div><div class="card-title">Trail des Calanques</div></div></div>
-          <div class="card-meta">12–13 sept · Cassis · organisé par Marie</div>
-          <div class="card-bottom"><span class="places">8/12 places</span><span class="badge badge-open">Places dispo</span></div>
+        <div class="card" data-d="rando">
+          <div class="card-top"><div><div class="card-discipline">Rando</div><div class="card-title">Marais de Guérande</div></div></div>
+          <div class="card-meta">4–6 sept (3 jours) · Marais salants de Guérande · organisé par Maud &amp; Eve</div>
+          <div class="card-bottom"><span class="card-link" style="visibility:hidden;">·</span><span class="badge badge-open">Inscription en cours</span></div>
         </div>
-        <div class="card" data-d="voile">
-          <div class="card-top"><div><div class="card-discipline">Voile</div><div class="card-title">Régate du Golfe</div></div></div>
-          <div class="card-meta">26–27 sept · Golfe du Morbihan · organisé par Paul</div>
-          <div class="card-bottom"><span class="places">7/10 places</span><span class="badge badge-open">Places dispo</span></div>
+        <div class="card" data-d="surf">
+          <div class="card-top"><div><div class="card-discipline">Surf</div><div class="card-title">Rendez-vous annuel à Lacanau</div></div></div>
+          <div class="card-meta">Date exacte à venir · Septembre / Octobre · Lacanau</div>
+          <div class="card-bottom"><span class="card-link" style="visibility:hidden;">·</span><span class="badge badge-soon">Inscription à venir</span></div>
         </div>
       </div>
     </div>
@@ -243,74 +262,73 @@
     <div class="month-group" data-m="Octobre 2026">
       <div class="month-title">Octobre 2026</div>
       <div class="cards">
-        <div class="card" data-d="escalade">
-          <div class="card-top"><div><div class="card-discipline">Escalade</div><div class="card-title">Grande voie à Buoux</div></div></div>
-          <div class="card-meta">10–11 oct · Buoux · organisé par Karim</div>
-          <div class="card-bottom"><span class="places">8/8 places</span><span class="badge badge-full">Complet</span></div>
-        </div>
-        <div class="card" data-d="rando">
-          <div class="card-top"><div><div class="card-discipline">Rando</div><div class="card-title">Tour des Aravis</div></div></div>
-          <div class="card-meta">24–25 oct · Aravis · organisé par Léa</div>
-          <div class="card-bottom"><span class="places">11/15 places</span><span class="badge badge-open">Places dispo</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="month-group" data-m="Novembre 2026">
-      <div class="month-title">Novembre 2026</div>
-      <div class="cards">
-        <div class="card" data-d="canoe">
-          <div class="card-top"><div><div class="card-discipline">Canoë</div><div class="card-title">Gorges de l'Ardèche</div></div></div>
-          <div class="card-meta">7–8 nov · Vallon-Pont-d'Arc · organisé par Yanis</div>
-          <div class="card-bottom"><span class="places">9/12 places</span><span class="badge badge-open">Places dispo</span></div>
-        </div>
-        <div class="card" data-d="rando">
-          <div class="card-top"><div><div class="card-discipline">Rando</div><div class="card-title">Tour du Ventoux</div></div></div>
-          <div class="card-meta">14–15 nov · Mont Ventoux · organisé par Léa</div>
-          <div class="card-bottom"><span class="places">13/15 places</span><span class="badge badge-low">Presque complet</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="month-group" data-m="Décembre 2026">
-      <div class="month-title">Décembre 2026</div>
-      <div class="cards">
-        <div class="card" data-d="ski">
-          <div class="card-top"><div><div class="card-discipline">Ski de rando</div><div class="card-title">Initiation peau de phoque</div></div></div>
-          <div class="card-meta">5–6 déc · Chamonix · organisé par Thomas</div>
-          <div class="card-bottom"><span class="places">10/10 places</span><span class="badge badge-wait">Liste d'attente</span></div>
-        </div>
-        <div class="card" data-d="raquettes">
-          <div class="card-top"><div><div class="card-discipline">Raquettes</div><div class="card-title">Plateau du Vercors</div></div></div>
-          <div class="card-meta">19–20 déc · Vercors · organisé par Inès</div>
-          <div class="card-bottom"><span class="places">6/14 places</span><span class="badge badge-open">Places dispo</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="month-group" data-m="Janvier 2027">
-      <div class="month-title">Janvier 2027</div>
-      <div class="cards">
-        <div class="card" data-d="alpinisme">
-          <div class="card-top"><div><div class="card-discipline">Alpinisme</div><div class="card-title">Initiation cascade de glace</div></div></div>
-          <div class="card-meta">16–17 jan · Écrins · organisé par Julie</div>
-          <div class="card-bottom"><span class="places">6/6 places</span><span class="badge badge-full">Complet</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="month-group" data-m="Février 2027">
-      <div class="month-title">Février 2027</div>
-      <div class="cards">
         <div class="card" data-d="kitesurf">
-          <div class="card-top"><div><div class="card-discipline">Kitesurf</div><div class="card-title">Stage découverte Leucate</div></div></div>
-          <div class="card-meta">20–21 fév · Leucate · organisé par Nina</div>
-          <div class="card-bottom"><span class="places">5/10 places</span><span class="badge badge-open">Places dispo</span></div>
+          <div class="card-top"><div><div class="card-discipline">Kitesurf</div><div class="card-title">Stage à Merlimont</div></div></div>
+          <div class="card-meta">3–4 oct (2 jours) · Tous niveaux · cours et location possibles sur place</div>
+          <div class="card-detail">On loue une petite maison sur place pour être tous ensemble.</div>
+          <div class="card-detail">💰 Logement ~100€/2 nuits + repas (+ location/cours si besoin) · 🚉 Gare Rang-du-Fliers/Verton/Berck · 📅 Clôture le 23 août</div>
+          <div class="card-bottom"><a href="https://chat.whatsapp.com/FjzGbAlMCYy39TbYXymIj1" target="_blank" rel="noopener" class="card-link">Rejoindre le groupe →</a><span class="badge badge-open">Inscriptions ouvertes</span></div>
+        </div>
+        <div class="card" data-d="rando">
+          <div class="card-top"><div><div class="card-discipline">Rando</div><div class="card-title">Marais de Guérande</div></div></div>
+          <div class="card-meta">4–6 oct (3 jours) · Le long de la côte · baignade assurée · 71,9 km, peu de dénivelé</div>
+          <div class="card-detail">Nuit en tente, en camping.</div>
+          <div class="card-detail">💰 ~40€ campings + repas sur place · 🚉 Gare du Croisic · 📅 Clôture le 16 août</div>
+          <div class="card-bottom"><a href="https://chat.whatsapp.com/DCAgMrvhdeh6vU7f6kqsOH" target="_blank" rel="noopener" class="card-link">Rejoindre le groupe →</a><span class="badge badge-open">Inscriptions ouvertes</span></div>
         </div>
       </div>
     </div>
 
     <div class="see-all"><a href="#">Voir tout le calendrier de la saison →</a></div>
+  </div>
+</section>
+
+<section class="past" id="passees">
+  <div class="wrap">
+    <div class="eyebrow">DÉJÀ VÉCU ENSEMBLE</div>
+    <h2 style="font-size:36px;">Les sorties passées</h2>
+    <div class="cards" style="margin-top:28px;">
+      <div class="card card-past">
+        <div class="card-top"><div><div class="card-discipline">Raquettes</div><div class="card-title">Plateau du Vercors</div></div></div>
+        <div class="card-meta">10–11 janvier · organisé par Jean-Marie &amp; Jérémie</div>
+        <div class="card-bottom" style="justify-content:flex-end;"><span class="badge badge-full">Complet</span></div>
+      </div>
+      <div class="card card-past">
+        <div class="card-top"><div><div class="card-discipline">Ski hors-piste</div><div class="card-title">La Grave</div></div></div>
+        <div class="card-meta">31 janvier–1er février · organisé par Maxime</div>
+        <div class="card-bottom" style="justify-content:flex-end;"><span class="badge badge-full">Complet</span></div>
+      </div>
+      <div class="card card-past">
+        <div class="card-top"><div><div class="card-discipline">Ski de rando</div><div class="card-title">Initiation en Haute-Savoie</div></div></div>
+        <div class="card-meta">21–22 février</div>
+        <div class="card-bottom" style="justify-content:flex-end;"><span class="badge badge-full">Complet</span></div>
+      </div>
+      <div class="card card-past">
+        <div class="card-top"><div><div class="card-discipline">Ski hors-piste</div><div class="card-title">Chamonix</div></div></div>
+        <div class="card-meta">14–15 mars</div>
+        <div class="card-bottom" style="justify-content:flex-end;"><span class="badge badge-full">Complet</span></div>
+      </div>
+      <div class="card card-past">
+        <div class="card-top"><div><div class="card-discipline">Vélo</div><div class="card-title">Giverny (depuis Paris)</div></div></div>
+        <div class="card-meta">25 avril · organisé par Jean-Marie</div>
+        <div class="card-bottom" style="justify-content:flex-end;"><span class="badge badge-full">Complet</span></div>
+      </div>
+      <div class="card card-past">
+        <div class="card-top"><div><div class="card-discipline">Plongée</div><div class="card-title">Saint-Mandrier-sur-Mer (Toulon)</div></div></div>
+        <div class="card-meta">6–7 juin · tous niveaux · organisé par Maxime</div>
+        <div class="card-bottom" style="justify-content:flex-end;"><span class="badge badge-full">Complet</span></div>
+      </div>
+      <div class="card card-past">
+        <div class="card-top"><div><div class="card-discipline">Alpinisme</div><div class="card-title">Initiation (4 jours)</div></div></div>
+        <div class="card-meta">25–28 juin · organisé par Maxime</div>
+        <div class="card-bottom" style="justify-content:flex-end;"><span class="badge badge-full">Complet</span></div>
+      </div>
+      <div class="card card-past">
+        <div class="card-top"><div><div class="card-discipline">Voile</div><div class="card-title">Sortie voile</div></div></div>
+        <div class="card-meta">18–19 juillet · organisé par Claire-Marine</div>
+        <div class="card-bottom" style="justify-content:flex-end;"><span class="badge badge-full">Complet</span></div>
+      </div>
+    </div>
   </div>
 </section>
 

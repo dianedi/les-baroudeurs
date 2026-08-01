@@ -103,8 +103,15 @@ nav a:hover{color:var(--grad-start);}
   background:var(--card);border:1px solid var(--ink);border-radius:4px;padding:18px;
   display:flex;flex-direction:column;gap:10px;
   overflow:hidden;
+  transition:transform 0.25s ease, box-shadow 0.25s ease;
 }
-.card-photo{height:280px;margin:-18px -18px 4px -18px;background-size:cover;background-position:center;}
+.card:hover{transform:translateY(-5px);box-shadow:0 12px 26px rgba(41,54,77,0.14);}
+.card-photo{height:280px;margin:-18px -18px 4px -18px;background-size:cover;background-position:center;transition:transform 0.45s ease;}
+.card:hover .card-photo{transform:scale(1.05);}
+
+/* past outings: 4 narrower cards per row */
+.past .card{flex:0 1 230px;}
+.past .card-photo{height:170px;}
 .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
 .card-discipline{font-family:'IBM Plex Mono';font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--stone-dark);}
 .card-title{font-family:'Big Shoulders Display';font-weight:700;font-size:21px;text-transform:none;line-height:1.05;}

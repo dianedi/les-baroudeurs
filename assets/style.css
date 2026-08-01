@@ -148,15 +148,23 @@ nav a:hover{color:var(--grad-start);}
 
 /* disciplines grid */
 .disciplines{padding:50px 0 64px;border-top:1px solid var(--line);}
-.disc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--ink);border:1px solid var(--ink);margin-top:28px;}
-.disc-item{background:var(--paper);padding:22px 18px;cursor:pointer;display:block;text-decoration:none;color:inherit;position:relative;overflow:hidden;transition:background 0.25s, transform 0.25s;}
-.disc-item:hover{background:var(--card);transform:translateY(-4px);}
-.disc-item .disc-icon{transition:transform 0.3s ease, stroke 0.3s ease;}
-.disc-item:hover .disc-icon{transform:scale(1.15) rotate(-4deg);stroke:var(--grad-start);}
-.disc-item::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--grad);transition:width 0.3s ease;}
-.disc-item:hover::after{width:100%;}
-.disc-icon{width:26px;height:26px;margin-bottom:14px;}
-.disc-name{font-family:'Big Shoulders Display';font-weight:700;font-size:16px;text-transform:uppercase;}
+.disc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px;}
+.disc-tile{
+  position:relative;display:block;aspect-ratio:3/4;border-radius:10px;overflow:hidden;
+  text-decoration:none;border:1px solid var(--line);background:var(--ink);
+}
+.disc-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;}
+.disc-tile:hover .disc-photo{transform:scale(1.08);}
+.disc-scrim{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,0.62) 100%);z-index:1;}
+.disc-gradient-overlay{position:absolute;inset:0;background:var(--grad);opacity:0;transition:opacity 0.35s ease;z-index:1;}
+.disc-tile:hover .disc-gradient-overlay{opacity:0.88;}
+.disc-tile-name{
+  position:absolute;left:16px;bottom:14px;z-index:2;color:#fff;
+  font-family:'Big Shoulders Display';font-weight:800;font-size:21px;letter-spacing:0.02em;
+  text-transform:uppercase;text-shadow:0 1px 6px rgba(0,0,0,0.35);
+}
+@media (max-width:900px){.disc-grid{grid-template-columns:repeat(3,1fr);}}
+@media (max-width:640px){.disc-grid{grid-template-columns:repeat(2,1fr);}}
 
 /* how it works */
 .how{padding:60px 0 70px;border-top:1px solid var(--line);}

@@ -56,12 +56,33 @@
 
   /* hero */
   .hero{position:relative;padding:76px 0 60px;overflow:hidden;border-bottom:1px solid var(--line);}
-  .topo{position:absolute;inset:0;z-index:0;opacity:0.5;}
-  .hero .wrap{position:relative;z-index:1;}
+  .hero-bg{position:absolute;top:-80px;left:0;right:0;bottom:-80px;z-index:0;will-change:transform;}
+  .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;animation:heroFade 35s infinite;}
+  .hero-slide:nth-child(1){animation-delay:0s;}
+  .hero-slide:nth-child(2){animation-delay:5s;}
+  .hero-slide:nth-child(3){animation-delay:10s;}
+  .hero-slide:nth-child(4){animation-delay:15s;}
+  .hero-slide:nth-child(5){animation-delay:20s;}
+  .hero-slide:nth-child(6){animation-delay:25s;}
+  .hero-slide:nth-child(7){animation-delay:30s;}
+  @keyframes heroFade{
+    0%{opacity:0;}
+    3%{opacity:1;}
+    13%{opacity:1;}
+    16%{opacity:0;}
+    100%{opacity:0;}
+  }
+  .hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.88) 32%, rgba(255,255,255,0.6) 55%, rgba(255,255,255,0.4) 100%);}
+  .hero .wrap{position:relative;z-index:2;}
   .hero h1{font-size:64px;max-width:780px;}
   .hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
   .hero p{font-size:18px;color:var(--stone-dark);max-width:520px;margin:22px 0 32px;line-height:1.6;}
   .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+
+  @media (prefers-reduced-motion: reduce){
+    .hero-slide{animation:none;opacity:0;}
+    .hero-slide:nth-child(1){opacity:1;}
+  }
 
   /* stats — styled like the carved wooden signposts (poteaux directionnels) in the French mountains */
   .signpost{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:22px 0;}
@@ -148,14 +169,16 @@
 </header>
 
 <section class="hero">
-  <svg class="topo" viewBox="0 0 1080 420" preserveAspectRatio="xMidYMid slice">
-    <g fill="none" stroke="#29364D" stroke-width="1">
-      <path d="M -50 340 Q 200 260 400 320 T 900 280 T 1200 340" opacity="0.15"/>
-      <path d="M -50 300 Q 220 220 420 280 T 920 240 T 1200 300" opacity="0.12"/>
-      <path d="M -50 260 Q 240 180 440 240 T 940 200 T 1200 260" opacity="0.1"/>
-      <path d="M -50 220 Q 260 140 460 200 T 960 160 T 1200 220" opacity="0.08"/>
-    </g>
-  </svg>
+  <div class="hero-bg" id="heroBg">
+    <div class="hero-slide" style="background-image:url('assets/hero/hero-01-larches-neige.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/hero/hero-02-canyon-mousse.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/hero/hero-03-dibona.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/hero/hero-04-pyramide-neige.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/hero/hero-05-sunset-lac.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/hero/hero-06-meleze-soleil.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/hero/hero-07-mont-blanc.jpg')"></div>
+  </div>
+  <div class="hero-scrim"></div>
   <div class="wrap">
     <div class="eyebrow">UNE COMMUNAUTÉ, PAS UNE AGENCE</div>
     <h1>On part <em>entre nous.</em></h1>
@@ -348,6 +371,14 @@
 </footer>
 
 <script>
+  const heroBg = document.getElementById('heroBg');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (heroBg && !prefersReducedMotion) {
+    window.addEventListener('scroll', () => {
+      heroBg.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+    }, { passive: true });
+  }
+
   const chips = document.querySelectorAll('.chip');
   const cards = document.querySelectorAll('.card');
   const groups = document.querySelectorAll('.month-group');
